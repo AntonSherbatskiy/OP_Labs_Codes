@@ -1,10 +1,13 @@
 time = float(input("Укажіть час після початку чергової години роботи світлофора: "))
+col = ""
 
-while time > 6:
-    time -= 6
-if 4 < time <= 6:
-    print("Червоний колір")
-if 3 < time <= 4:
-    print("Жовтий колір")
-if 0 < time <= 3:
-    print("Зелений колір")
+a = time % 6
+
+if a > 4 and a <= 6:
+    col = "Червоний"
+elif a > 3 and a <= 4:
+    col = "Жовтий"
+elif a >= 0 and a <= 3:
+    col = "Зелений"
+
+print(col)
