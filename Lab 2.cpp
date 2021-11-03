@@ -1,30 +1,22 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    float time;
+    int time, time_divide;
+    string col;
 
     cout << "Enter the time after the start of the traffic light: " << endl;
     cin >> time;
-    while (time > 6)
-    {
-        time -= 6;
-    }
-    if (time > 4 && time <= 6)
-    {
-        cout << "Green" << endl;
-    }
-    else if (time > 3 && time <= 4)
-    {
-        cout << "Yellow" << endl;
-    }
-    else if (time > 0 && time <= 3)
-    {
-        cout << "Red" << endl;
-    }
 
+    time_divide = time % 6;
 
+    if(time_divide > 4 && time_divide <=6)
+        col = "Red";
+    else if(time_divide > 3 && time_divide <= 4)
+        col = "Yellow";
+    else if(time_divide >= 0 && time_divide <= 3)
+        col = "Green";
 
+    cout << col << endl;
 }
