@@ -23,6 +23,3 @@ int main()
     }
     cout << "Sum = " << sum;
 }
-
-
-
