@@ -6,7 +6,6 @@ int quantityWords(string text);                 //Функція для знах
 void cutString(string& text, string *array);    //Функція для виділення слів із введеного рядка
 void sortWords(string* array, int size);        //Функція для сортування слів за їх першою літерою
 void outputWords(string array[], int size);     //Функція для виведення відсортованих слів
-void deleteWords(string* array, int size);
 
 int main()
 {
@@ -23,8 +22,6 @@ int main()
     outputWords(words, quantity);              //Виводимо масив слів
 
     cout << endl;
-
-    deleteWords(words, quantity);
 }
 
 int quantityWords(string text)
@@ -77,42 +74,9 @@ void sortWords(string *array, int size)
 }
 void outputWords(string array[], int size)
 {
-
     cout << "Sorted string:" << endl;
     for(int i = 0; i < size; i++)
     {
         cout << array[i] << endl;                  //Виведення відсортованих слів
     }
-
-    string text1 = "";
-    cout << endl << endl;
-
-    for(int i = 0; i < size; i++)
-    {
-        text1 += array[i];
-    }
-    cout << text1;
 }
-
-void deleteWords(string* array, int size)
-{
-    int k;
-    cin >> k;
-
-    string newWords[size-k];
-
-    for(int i = 0; i < size-k; i++)
-    {
-        newWords[i] = array[i];
-    }
-
-    delete [] array;
-
-    array = newWords;
-
-    for(int i = 0; i < size-k; i++)
-    {
-        cout << array[i] << endl;
-    }
-}
-
